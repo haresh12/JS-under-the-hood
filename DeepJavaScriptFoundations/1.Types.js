@@ -162,6 +162,7 @@ console.log(typeof iAmNoWhere); // undefined (Again something tricky right)
  *  have never done that and rather we would be returning something more meaningful like undecleard.
  */
 
+
 /**
  *  Understanding some spectial JS functions like NaN and isNaN
  */
@@ -218,7 +219,6 @@ console.log(Number.isNaN("Some Day")); // false
 
 const nZero = -0;
 const zero = 0;
-
 /*
 First weird thing is when you convert -0 into string then it returns value "0" and this is where also JS tries to out smart the
 developer but same thing if we could go back and change back then it should be return "-0"
@@ -264,3 +264,24 @@ function sign(val){
 }
 
 console.log(sign(-2))
+
+
+/**
+ *  LAST THING THERE ARE FEW FUNDAMENTAL OBJECT OR WE CAN ALSO SAY BUILT IN OBJECT WHERE WE SHOULD USE THE new KEYWORD
+ *  AND THERE ARE FEW PLACES WHERE WE SHOULD NOT USE new KEYWORD FOR NOW WE DON'T NEED TO GO DEEP INTO THIS BUT JUST
+ *  REMEMBER BECAUSE LATER WE ARE GOING TO LEARN THIS ALSO
+ * 
+ *  Where should we use new keyword :
+ *  Object();
+ *  Array();
+ *  Function();
+ *  Date(); 
+ *  RegExp();
+ *  Error(); // 90% time you will use here only and second one with Date()
+ * 
+ *  Where should we not use new keyword :
+ *  String();
+ *  Boolean();
+ *  Number(); 
+ *   
+ */
