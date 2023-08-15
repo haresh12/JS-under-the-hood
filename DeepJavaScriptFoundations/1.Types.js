@@ -155,4 +155,112 @@ console.log(typeof see === "undefined"); // true
  *  What will happend if we try to find the typeof for the variable that does not even exist lets see
  */
  
-console.log(typeof iAmNoWhere);
+console.log(typeof iAmNoWhere); // undefined (Again something tricky right) 
+/**
+ *  This is because JS does not thing its big of the deal if variable is not defined or we can see undecleared it creates the
+ *  variable by it self and assign the value undefined and really if we have to go back and change the things then we would 
+ *  have never done that and rather we would be returning something more meaningful like undecleard.
+ */
+
+/**
+ *  Understanding some spectial JS functions like NaN and isNaN
+ */
+
+const myAge = Number('0o143'); // octal value of 99
+console.log(myAge); // this will output 99 good.
+
+const mySonAge = Number('n/a'); // see we are not passing valid number
+console.log(mySonAge); // NaN and its understandable because we passed invalid number
+
+const some = 55 -  'haresh'; // NaN
+console.log(some); // again NaN because negative opertion cohverse value in number and it sees that haresh in not an number
+                   // so thats why it returns NaN
+
+/**
+ *  See most of the things related to NaN is clear but one intersting thing we need to learn and always remember is that
+ *  NaN VALUES ARE NOT EQUAL TO EACH OTHER WHAT DO WE MEAN BY IT LETS UNDERSTAND WITH EXAMPLE
+ */
+
+let val;
+let bel;
+console.log(val === bel); // Yep you will get true and it make sense because both are undefined
+
+// But in case of NaN this is not the case
+
+const fNaN = Number('Some');  // NaN
+const sNaN = Number('Day');  // NaN
+console.log(fNaN === sNaN); // HERE WE WILL GET FALSE BECAUSE IN JAVASCRIPT NaN IS THE ONLY VALUE THAT IS NOT EQUAL TO ITSELF
+                            // AND THIS IS ACCORDING TO THE SPEC
+
+/**
+ *  Now to check whether value is NaN or not in JS we have one utility function which is isNaN();
+ */
+ 
+console.log(isNaN(5)); // false because we added the vaild number
+console.log(isNaN("5")); // again valid number because JS first coerced the value and change it to number and then it become valid number
+
+/**
+ *  Now this one again intersting thing where JS made mistake see we are not at all passing the number so why does it give us
+ *  value true because "Some day" is not even number so we can not say its invalid number and still it returns true
+ *  BUT IN ES6 THEY REALIZE THIS MISTAKE AND PROVIDED ONE MORE UTILITY FUNCTION Number.isNaN();
+ */
+console.log(isNaN("Some Day")); // true
+console.log(Number.isNaN("Some Day")); // false 
+
+/**
+ *  ONE LAST THING ABOUT ABOVE TOPIC IS WHEN YOU SEE NaN WE MOSTLY REFER IT AS NOT AN NUMBER BUT IN SPEC THEY REFER IT AS INVALID
+ *  NUMBER AND THAT MAKE MORE SENSE.
+ */
+
+/**
+ *  WE HAVE ONE MORE SPECIAL TYPE OF VALUE WHICH IS NEGATIVE ZERO. Lets see few weird thing about it
+ */
+
+const nZero = -0;
+const zero = 0;
+
+/*
+First weird thing is when you convert -0 into string then it returns value "0" and this is where also JS tries to out smart the
+developer but same thing if we could go back and change back then it should be return "-0"
+*/
+
+console.log(nZero.toString()); // "0" where is my nagetive sign ;)
+
+/*
+  Second weird thing is when you tries to compare both negative and positive 0 then it will give us return value true but how on
+  the earth both 0 and -0 are same no idea.
+*/
+
+console.log(nZero === zero); // true 
+
+/**
+ *  But still there is a way to check whether its negative value or not by using Object.is() utility method which was introduced in ES6
+ */
+
+console.log(Object.is(nZero,-0)); // true
+console.log(Object.is(zero,-0)); // false
+
+/**
+ *  Another way to check is to use Math.sign() utility method but again one weird thing about is lets see
+ */
+
+console.log(Math.sign(-2)); // return -1 means its negative value
+console.log(Math.sign(-5)); // return -1 means its negative value
+console.log(Math.sign(2)); // return 1 means its positive value
+console.log(Math.sign(5)); // return 1 means its positive value
+
+// FOR ALL OTHER NUMBERS IT RETURNS -1 OR 1 BUT ISSUE COMES WHEN YOU CHECK FOR 0 AND -0
+
+console.log(Math.sign(-0)); // THIS RETURNS -0 BUT WHY NOT -1 BECAUSE FOR ALL OTHER NEGATIVE NUMBER IT RETURNS -1
+console.log(Math.sign(0)); // THIS RETURNS 0 BUT WHY NOT 1 BECAUSE FOR ALL OTHER POSITIVE NUMBER IT RETURNS 1
+
+/**
+ *  IF WE NEED THEN WE CAN MAKE CHANGES IN INTERNAL SIGN METHOD AND MAKE IT BEHAVE SAME FOR ALL
+ */
+
+// YEP THATS IT
+function sign(val){
+  return val !== 0 ? Math.sign(val) : Object.is(val,-0) ? -1 : 1;
+}
+
+console.log(sign(-2))
