@@ -4,7 +4,7 @@
  *    
  *   Types  
  *   Coercion
- *   Equality
+ *   Equality 
  *   Static Typing
  *   Scope
  *   Scope and function expression

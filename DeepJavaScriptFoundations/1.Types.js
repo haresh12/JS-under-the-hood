@@ -53,7 +53,6 @@
   let c = "5a"
   c++;
   console.log(c); // NaN
-
 /**
  *  Now we seen in above problem that there was no issue with the langauge but in our understanding of that language so lets try
  *  to learn different primitive types in JS and see how they behave and once we are done with all this most of the things will make
@@ -285,3 +284,25 @@ console.log(sign(-2))
  *  Number(); 
  *   
  */
+
+// this are the all falsy values we have in boolean
+console.log(Boolean(0))
+console.log(Boolean(-0))
+console.log(Boolean(NaN))
+console.log(Boolean(null))
+console.log(Boolean(false))
+console.log(Boolean(undefined))
+
+// some of the weird cases that we can thing of all below will give true
+
+console.log(Boolean("false"));
+console.log(Boolean("TRUE"));
+console.log(Boolean("YE NHI BOLNA THA"));
+console.log(Boolean("false"));
+
+
+// this one is intersting 
+let fine = "Haresh".toLocaleLowerCase();
+console.log(typeof fine)
+let mine = new String("Not Possible")
+console.log(typeof mine)
