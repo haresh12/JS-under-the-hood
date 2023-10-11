@@ -13,3 +13,8 @@
  *   Objects
  *   Prototypes
  */
+
+
+while("adsasdasd"){
+    console.log('jasd')
+}

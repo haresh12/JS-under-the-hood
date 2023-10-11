@@ -2,7 +2,7 @@
  *  First lets understand with one weird example that why should even we learn about types.
  */
 
-  let x = 5;
+  let x = "5aa";
   x++;
   console.log(x); // output : 6
 
@@ -10,7 +10,7 @@
   ++y;
   console.log(y); // output : 6
 
- /**
+ /**  
   *  Now in above example we are seeing that for x we are using post increment and for y we are using pre-increment and in our min
   *  whenver we see x++ what we thing is that its equal to x+1 so lets try one thing lets use x + 1 rather then using x++ but this
   *  time we are not going to use number we are going to assing value in string lets see what happen then
@@ -24,6 +24,8 @@
  let b = "5";
  b++;
  console.log(b); // Output : 6
+
+
 
  /**
   *  And for above question answer lies in this specification link so most of time we have assumption that this is how code should 
@@ -65,18 +67,18 @@
  *  undefined
  *  string 
  *  number
+ *  null
  *  boolean
- *  object
- *  symbol
+ *  symbol  
+ *  bigInt 
  *   
  *  NOW ABOVE LISTED ARE ALL THE TYPES THAT WE HAVE LISTED IN SPEC BUT TEHRE ARE FEW OTHER SUBTYPES OR WE CAN SEE THEY BEHAVE DIFFERENT
  *  SO WE CAN SAY THOSE ARE ALSO THE TYPES. BECAUSE THEY BEHAVE DIFFERENTLY.
  *  
- *  undecleard
- *  null
- *  array
- *  function
- *  bigint
+ *  
+ *  Object
+ *  function (subtype of object)
+ *  array (subtype of object)
  * 
  *  Here is one thing that we heard mostly everywhere that everything in javascript is object. But
  *  
@@ -302,7 +304,30 @@ console.log(Boolean("false"));
 
 
 // this one is intersting 
-let fine = "Haresh".toLocaleLowerCase();
-console.log(typeof fine)
+let fine = "Haresh";
+ 
 let mine = new String("Not Possible")
 console.log(typeof mine)
+
+
+///// LITTLE BIT ABOUT SYMBOLS
+
+/**
+ *  New type of primitive data type same as other primitive type
+ *  https://www.youtube.com/watch?v=5ftatbD3MAI
+ */
+
+const sym1 = Symbol('HARESH');
+const sym2 = Symbol('HARESH');
+
+console.log(sym1 === sym2)
+
+let obj = {};
+
+const k1 = Symbol('identifier');
+const k2 = Symbol('identifier');
+
+obj[k1] = 'Haresh';
+obj[k2] = 'Hitesh';
+
+console.log(obj)
