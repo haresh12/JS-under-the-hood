@@ -473,4 +473,77 @@
  *     } 
        close(i);
  *    }
+
+       meoization , once , moduler pattern , data hiding and encaulation , construction function (use of this)
+
+       WHAT IS CONSTRUCTION FUNCTION ? (MI NOT DONE YET)
+
+       DISADVANTAGES : OVER COUSUMATION OF MEMORY BECAUSE VARIABLES ARE NOT GARBAGE COLLECTED 
+
+       GARBAGE COLLECTOR :  FREEZE UP THE UN UNUSED FUNCTIONS AND VERIABLES IN VERY SIMPLE TERMS
+
+       NOW SEE JS IS HIGH LEVEL PROGRAMING LANGUAGE AND HERE MEMORY HANDLES BY LANGAUAGE IT SELF
+       BUT IS CASE OF PROGRAMING LANGUAGE LIKE C C++ YOU HAVE POWER TO MANAGE THAT
+ */
+
+/***
+ *     FEW INTERSTING INTERVIEW QUESTIONS
+ *
+ *     Function statatment   ==== Function Declearion
+ *     function a() {
+ *       console.log("a");
+ *     }
+ *
+ *    Function expression
+ *    var a = function () {
+ *     console.log("a");
+ *    }
+ *
+ *   Major different between function statement and function expression is hoisting
+ *   in one it will copy entire code of the function and in one it won't copy entire
+ *   code rather it will give just value undefined
+ *
+ *   Anonymus function : function without a name are know as anonymus functions
+ *   best example think about when you pass click event of buttons or touchable and all
+ *
+ *   Named function :
+ *    // this is named function and why you will do this i don't know
+ *    var c =  function acs(){console.log("why do we do that")}
+ *
+ *    c();
+ *    asc(); // this will throw an error
+ *
+ *
+ *   Different between parameters and arguments :
+ *
+ *   function haresh(a,b){ // at the time of declearion whatever you are passing is
+ *     function parameters
+ *     console.log(a,b)
+ *    }
+ *
+ *    haresh(1,2); // At the time of invocation whatever you are passing is know as
+ *    function arguments
+ *
+ *   First class function : THIS THING WE ALREADY DISSCUED IN JAVASCRIPT YOU CAN PASS
+ *   FUNCTION AS ARGUMENT , YOU RETURN FUNCTION FROM ANOTHER FUNCTION , AND YOU CAN
+ *   ASSIGN FUNCTION TO VARIABLE BECAUSE OF ALL THIS CAPABILITES FUNCTIONS ARE KNOW
+ *   AS FIRST CLASS CITIZEN
+ *
+ *    Arrow function : just different way to define function here if you create arrow
+ *    function then it will have major impect on hoisting and second it will have
+ *    major impect on how it behaves with this keyword
+ *
+ *   Callback functions :  SUPPOSE YOU HAVE ONE FUNCTION AND YOU ARE PASSING THAT FUNCTION TO ANOTHER FUNCTION THEN THIS FUNCTION THAT YOU ARE
+ *   PASSING TO ANOTHER FUNCTION IS KNOWN AS CALL BACK FUNCTION
+ *
+ *   Higher Order Function : THE FUNCTION IN WHICH YOU HAVE PASSED THE CALL BACK FUNCTION IS KNOW AS HIGHER ORDER FUNCTION
+ *
+ *   function callBack(){
+ *     console.log("PLEASE DON'T PASS ME")
+ *   }
+ *
+ *   // I AM THE KING I HAVE FULL CONTROL ON YOU MY CALLBACK
+ *   function higherOrder(callBack){
+ *      callBack(); // OK DO WHATEVER YOU WANT DO WITH ME
+ *    }
  */
