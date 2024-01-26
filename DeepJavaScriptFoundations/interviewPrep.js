@@ -208,3 +208,151 @@
  *  DIFFERENT ENVIROMENT CAN HAVE DIFFERENT NAMES FOR GLOBAL OBJECT
  *  LAST BUT MI : THIS ==== WINDOW ==== GLOBAL
  */
+
+/**
+ *  The Scope Chain, Scope & Lexical Environment
+ *
+ *  OK  FIRST LETS UNDERSTAND THAT LEXICAL EVIROMENT IS SIMPLE WORD MEANS THAT WHERE YOUR CODE IS SEATING.
+ *
+ *  function a() {
+ *   let b = 50; ; // HERE VERIABLE B IS LEXICALY SEATING INSIDE FUNCTION A AND SCOPE OF VERIABLE B IN ENTIRE FUNCTION A
+ *   console.log(b)
+ *  }
+ *
+ *  TO BE REALLY THIS IS MOST COMMON THING HERE SCOPE MEANS WHERE BASICALLY YOU CAN USE TAHT SPECIFIC FUNCTION OR VARIABLE
+ *
+ *  NOW BEFORE WE MOVE INTO SCOPE CHAIN LETS UNDERSTANDED ONE EXAMPLE
+ *
+ *   THIS IS YOUR FAMILY =>>> YOU >>>  ELDER BROTHER >>> MOTHER >>> FATHER >>> GRAND FATHER
+ *
+ *   SUPPOSE YOU NEED 100 RS AND YOU WENT TO YOUR ELDER BROTHER AND ASKED FOR 100 RS BUT HE DON'T HAVE IT BUT HE REALLY LOVES YOU SO HE TRIED HIS BEST
+ *   AND RATHER THEN DIRECTLY SAYING NO TO YOU HE ASKED TO MOTHER NOW MOTHER ALSO DOES NOT HAT MONEY AND MOTHER NEVER WANTS TO SAY NO TO THERE CHILDREN
+ *   SO WHAT SHE DID SHE ASKED HER HUSBAND (YOUR FATHER) BUT HE ALSO DOES NOT HAS MONEY AND THEN YOU FATHER WENT TO HIS OWN FATHER AND ASKED FOR 100
+ *   RUPEES AND FINALLY HE GAVE TO HIM  YOUR FATHER GAVE TO YOUR MOTHER YOU MOTHER GAVE TO YOU ELDER BROTHER AND YOUR ELDER BROTHER GAVE THAT TO YOU
+ *
+ *   SEE IN ABOVE EXAMPLE YOUR END GOAL WAS TO GET 100 RS AND YOU GOT IT NO MATTER FROM WHERE
+ *
+ *   AND THIS IS THE BEST EXAMPLE OF SCOPE CHAIN GIVEN THE EXAMPLE YOU HAVE ONE FUNCTION WHICH IS PRINTING X AND SUPPOSE IN ITS OWN EXECUTION CONTEXT IT
+ *   DOES NOT HAVE ANY THAT VARIABLE THEN IT WON'T STOP THERE IT WILL ASK TO HIS PARENT FUNCTION IF IT ALSO DOES NOT HAVE THEN HIS PARENT COMPONENT WILL
+ *   ASK TO HIS PARENT COMPONENT UNTIL YOU REACH TO GLOBAL EXECUTION CONTEXT BECAUSE GEC DOES NOT HAVE ANY PARENT COMPONENT
+ *
+ *   ABOVE BOTH EXAMPLE ARE MORE THEN ENOUGH TO UNDERSTAND SCOPE CHAIN
+ *
+ *   ONE MORE THING THAT WE NEED TO LEARN HERE IS THAT IN CASE OF IF YOU ASKED YOUR PARENT WHICH IS GLOBAL EXECUTION CONTEXT AND IT ALSO DOES NOT HAVE VARIABLE
+ *   THAT YOU ARE LOOKING FOR THEN IT WILL SIMPLY CRASH THE APPLICATION
+ *
+ *
+ *   NOW MAKE SURE ONE THING THAT YOU CAN ASK MONEY TO YOU ELDER BUT IF YOUR ELDER DOES NOT HAVE ANY MONEY THEN YOU CAN NOT HELP THEM ANYWAY
+ *
+ *   SO SUPPOSE IF YOU TRYING TO PRINT console.log(a);  AT GLOBAL LEVEL WE DON'T HAVE A THEN GEC CAN NOT ASK HELP TO ITS PARANT BECAUSE IT DOES NOT HAVE.
+ *   IN THAT CASE JS PROGRAM WILL THROUGH ERROR THAT A IN NOT-DEFIEND
+ *
+ *   WHENEVER EXECUTION CONTEXT IS CREATED THEN WITH THAT ALSO LEXICAL ENVIROMENT IS CREATED IN THAT LEXICAL ENVIROMENT YOU WILL HAVE YOUR OWN STUFF AND
+ *   STUFF OF YOUR PARENT FUNCTION ALSO
+ *
+ */
+
+/***
+ *
+ *   let & const in JS, Temporal Dead Zone
+ *
+ *   LET AND CONST DECLEARION ARE HOIESTED BUT THEY ARE DIFFERENT THEN VAR.
+ *   IF YOU SEE LET AND CONST ARE BLOCKED SCOPED WHERE VAR IS FUNCTION SCOPE
+ *
+ *    console.log(a);
+ *    var a = 10;
+ *
+ *   // ABOVE EXAMPLE WILL WORK FINE BECAUSE OF VAR AS IN GEC THE SCOPE OF VAR IS GLOBAL
+ *
+ *   console.log(b);
+ *   let b = 10;
+ *
+ *   SEE IF YOU DON'T WANT GO MUCH DEEPERT THEN ATLEAST UNDERSTAND ONE THING IS THAT LET AND CONST ARE MUCH MORE STRICT THEN VAR SEE SAME THING
+ *   WE TRIED WITH VAR IT WORKED BUT IN CASE OF LET ITS NOT WORKING BECAUSE OF TEMORIAL DEAD ZONE
+ *
+ *   YES YOU HEARD IT RIGHT THIS ONE BUG WORD : TEMOREAL DEAD ZONE
+ *
+ *   THE BEST WAY TO UNDERSTAND IS WITH EXAMPLE : 
+ * 
+ * 
+ *     console.log(a); // ReferenceError: Cannot access 'a' before initialization
+       console.log(b); // prints undefined as expected
+       let a = 10;
+       console.log(a); // 10
+       var b = 15;
+       console.log(window.a); // undefined
+       console.log(window.b); // 15
+ *
+        Both a and b are actually initialized as undefined in hoisting stage. But var b is inside the storage space of GLOBAL,
+        and a is in a separate memory object called script, where it can be accessed only after assigning some value to it first ie. 
+        one can access 'a' only if it is assigned. Thus, it throws error.
+
+
+        IMPORTENT THING TO UNDERSTAND HERE IS SCRIPT MEMORY TAGE SEE VAR WAS GETTING STORED IN MEMORY TAB LET AND CONST WILL BE STORED 
+        SCRIPT TAG
+
+
+        Temporal Dead Zone : Time since when the let variable was hoisted until it is initialized some value.
+
+
+        you assign some value then only use let don't try to use before assigning or initalizing it 
+
+        console.log(a);
+        let a 
+
+        above one won't works
+
+        let b 
+        console.log(b);
+
+        this will work fine because see you have inizalized it b first and then you have used it
+
+
+          Reference Error are thrown when variables are in temporal dead zone.
+  
+          Syntax Error doesn't even let us run single line of code.
+
+
+          // THIS WILL GIVE YOU REFERENCE ERROR
+          console.log(a);
+          let a = 100;
+
+
+          // THIS WILL GIVE YOU SYTEX ERROR
+           let a = 100;
+           let b = 300;
+
+
+
+         // THIS WILL GIVE YOU TYPE ERROR  
+
+         const a = 100; // UNDERSTAND CONST IS MORE STRICT THE LET IN CASE OF LET IF YOU HAVE DONE THAT IT WILL WORK 100% FINE BUT IN CASE OF 
+         const it won't run
+         a = 100;
+
+
+    IF YOU UNDERSTAND BAISC YOU UNDERSTAND EVERYTHING SEE WHY EVEN WE NEED THISE LET AND CONST ITS BECAUSE WE WANT TO MAKE JAVASCRIPT MORE STRICT 
+    IN CASE OF LET YOU CAN NOT USE VARIABLE BEFORE INITALIZING IT THATS THE ONE GOOD RULE NOW SECOND ONE IS THAT CONST THAT ONCE YOU HAVE ASSIGNED
+    SOME VALUE THEN DON'T ASSIGN ANY NEW VALUE TO THAT VARIABLE GOT IT ?
+
+    SOME GOOD PRACTICES:
+    Try using const wherever possible.
+    If not, use let, Avoid var.
+    Declare and initialize all variables with let to the top to avoid errors to shrink temporal dead zone window to zero.
+
+ */
+
+/***
+ *  THINGS THAT WE LEARNED HERE
+ *
+ *  scope
+ *  lexical enviroment
+ *  scope chaine
+ *  GEC does not have any lexical enviroment its atteched to null
+ *  let var and const
+ *  Script tag
+ *  Temorial Dead Zone
+ *  Reference Error , Syntex Error and Type error :  Let ko phele he use kr doge to Reference error aayega
+ *                                                   Do let variables ka same name doge to Sytex error aayga
+ *                                                   const fo value fir se assign ki to type error aayega
+ */
