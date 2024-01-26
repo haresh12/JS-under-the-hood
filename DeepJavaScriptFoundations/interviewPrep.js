@@ -616,3 +616,64 @@
  *
  *
  */
+
+/**
+ *    map, filter & reduce  
+ * 
+ *   Map function  :  It is basically used to transform a array. The map() method creates a new array with the results of calling a 
+ *                    function for every array element.
+ * 
+ *   const output = arr.map(function) // this function tells map that what transformation I want on each element of array
+ * 
+ *   const arr = [5, 1, 3, 2, 6];
+    // Task 1: Double the array element: [10, 2, 6, 4, 12]
+    function double(x) {
+    return x * 2;
+    }
+   const doubleArr = arr.map(double); // Internally map will run double function for each element of array and create a new array and returns it.
+   console.log(doubleArr); // [10, 2, 6, 4, 12]
+
+   Filter function : Filter function is basically used to filter the value inside an array. 
+   The arr.filter() method is used to create a new array from a given array consisting of only those elements 
+   from the given array which satisfy a condition set by the argument method.
+
+
+
+   Reduce function :  It is a function which take all the values of array and gives a single output of it. 
+   It reduces the array to give a single output.
+
+   // IF YOU DON'T WANT TO USE REDUCE THEN YOU CAN SIMPLY USE THIS 
+    const array = [5, 1, 3, 2, 6];
+   // Calculate sum of elements of array - Non functional programming way
+     function findSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+      }
+      return sum;
+    }
+      console.log(findSum(array)); // 17
+
+// reduce function way  (REDUCE IS ONLY THING WE NEED TO LEARN MAP AND FILTER ARE CLEAR)
+const sumOfElem = arr.reduce(function (accumulator, current) {
+  // current represent the value of array
+  // accumulator is used the result from element of array.
+  // In comparison to previous code snippet, *sum* variable is *accumulator* and *arr[i]* is *current*
+  accumulator = accumulator + current;
+  return accumulator;
+}, 0); //In above example sum was initialized with 0, so over here accumulator also needs to be initialized, so the second argument to reduce function represent the initialization value.
+console.log(sumOfElem); // 17
+
+ */
+
+let arr = [2, 3, 4, 5];
+
+arr.reduce(function (acc, cur) {
+  acc = acc + cur;
+  return acc; // DO NOT FORGET TO RETURN ACC ELSE YOUR OUTPUT WILL BE UNDEFINED
+}, 0); // DEFAULT VALUE OF ACCUMULATER IS 0 WHAT IF YOU WANT TO MULTIPLE ALL
+
+arr.reduce(function (acc, cur) {
+  acc = acc * cur;
+  return acc; // DO NOT FORGET TO RETURN ACC ELSE YOUR OUTPUT WILL BE UNDEFINED
+}, 1);
