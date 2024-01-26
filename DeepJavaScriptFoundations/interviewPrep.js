@@ -356,3 +356,73 @@
  *                                                   Do let variables ka same name doge to Sytex error aayga
  *                                                   const fo value fir se assign ki to type error aayega
  */
+
+/**
+ *  Block Scope & Shadowing in JS  (MI)
+ * 
+ *  Block aka compound statement is used to group JS statements together into 1 group. We group them within {...}
+ * 
+ *   if() // this need atleast one statement 
+ *   
+ *   if(true) console.log('fine')
+ * 
+ *   this will work fine but what about if we need multiple statement in taht case we will be using block
+ * 
+ *   if(true) {
+ *     // in simple terms when you need to group multiple statement into single group at that time we can use block
+
+ *   }
+
+     ANOTHER MOST IMPORTENT INTERVIEW QUESTION IS LET AND CONST ARE BLOCK SCOPED  
+
+     UNDERSTAND ABOVE THING BY EXAMPLE ONLY
+     
+     {
+      var a = 10;
+      let b = 100;
+      const c = 1000;
+
+      console.log(a);  // THIS WILL WORK FINE 
+      console.log(b);  // THIS WILL WORK FINE 
+      console.log(c)  // THIS WILL WORK FINE 
+     }
+      console.log(a);  // THIS WILL WORK FINE BECAUSE FOR A WE ARE USING  VAR 
+      console.log(b);  // THIS IS WHERE THE PROBLEM WILL COME BECAUSE LET AND CONST ARE BLOCKED SCOPED AND YOU CAN NOT ACCESS THOSE OUTSIDE OF BLOCK
+      console.log(c)
+
+      // UNDERSTAND ONE SIMPLE THING THAT LET AND CONST ARE BLOCK SCOPED AND VAR IS FUNCTION SCOPED
+
+
+      // NOW HERE ONE MORE THING WE NEED TO LEARN IS SHADOING AND ILLIGAL SHADOWING 
+
+
+       var a = 100;
+       {
+        var a = 10;
+       }
+
+       console.log(a); // here you will get output 10 because var inside block shadows the value inside var inside block make sense 
+
+       // WHAT DO YOU MEAN BY ILLEGAL SHADOING 
+
+       let a = 100;
+       {
+          var a = 10;       
+       }
+
+       // ABOVE CODE WILL GIVE ERROR DEKH YAAR A KO SCOPE YHA PE GLOBAL HE AND YOU SEE LET BE GLOBAL SCOPE ME HE TO KESE CHALEGA EK HE JESE DO VARIABLES KA NAANM
+      
+       I THING IF WE TRY TO UNDERSTAND ABOUT TOPIC IT MAKE SENSE BUT IF WE TRY TO REMEMBER THAT TOPIC IT DOES NOT MAKE ANY SENSE 
+
+
+       ALL YOU HAVE TO UNDERSTAND HERE IS WHAT IS BLOCK SCOPED WHY DO WE EVEN NEED BLOCKS IN JS WHAT IS SHWDOING CAN YOU EXPLAIN WHAT DO YOU MEAN 
+       WHY YOU SAY LET AND CONST AND BLOCK SCOPED AND VAR ARE FUNCTIONS SCOPED
+
+      LEARING
+
+      BLOCK
+      BLOCK SCOPED LET AND CONST
+      FUNCTION SCOPED
+      SHADOWING 
+      ILLIGAL SHADOWING 
+ */
