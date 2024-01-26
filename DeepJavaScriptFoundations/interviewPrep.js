@@ -664,6 +664,7 @@ const sumOfElem = arr.reduce(function (accumulator, current) {
 }, 0); //In above example sum was initialized with 0, so over here accumulator also needs to be initialized, so the second argument to reduce function represent the initialization value.
 console.log(sumOfElem); // 17
 
+ MAKE SURE THAT WE CAN ALSO CHAIN THE FUNCTIONS LIKE arr.map().filter().map() // YES WE CAN DO THAT AND IT MAKE SENSE
  */
 
 let arr = [2, 3, 4, 5];
@@ -677,3 +678,88 @@ arr.reduce(function (acc, cur) {
   acc = acc * cur;
   return acc; // DO NOT FORGET TO RETURN ACC ELSE YOUR OUTPUT WILL BE UNDEFINED
 }, 1);
+
+/**
+ *  Callback hell and inversion of control :
+ *  PARMID OF DOOM : DON'T GROW YOU CODE HORIZONTALLY PLEASE
+ *
+ *  STATE OF PROMISE PENDING , FULFILLED  , REJECTED
+ *
+ *  AND PROMISE WILL BE CALLED ONLY ONCE AND BEST PART IS THAT PROMISE OBJECTS ARE IMMUTABLE
+ *
+ *  CONTAINER FOR FUTURE VALUE : PROMISES
+ *
+ *  PROMISE IS AN OBJEC THAT REPRESET EVENTALLY COMPLIATION OF ASYNC OPERATION
+ *
+ *  PARAMID OF DOM AND INVERSION OF CONTROL BOTH WILL BE SOLVED WITH PROMISES
+ *
+ *  CALL BACK HELL CAN BE SOLVED WITH PROMISE CHAINING .THEN().THEN().THEN() MAKE SURE YOU DON'T FORGET TO RETURN IF YOU WANT TO PASS THE DATA
+ *
+ */
+
+/**
+ *  PRMOISE UTILITY METHODS : 
+ * 
+ *  Promise. all(): This utility method of promise will take an array of promises as input and it will return us a new promise. 
+ *  Here we need to understand one thing the new promise will be resolved only when all the promises from the input array get 
+ *  resolved if any of them will be rejected then our output promise will also going to through an error. Let's understand it by example.
+ *  
+ *   (IN SIMPLE WORD I WILL WORK ONLY IF ALL PROMISES ARE RESOLVED IF ANY ONE OF THEN IS FAILED THINK AS I AM FAILED)
+
+
+ */
+
+const firstPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Result from first promise");
+  }, 200);
+});
+
+const secondPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Result from second promise");
+  }, 400);
+});
+
+const thirdPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Result from third promise");
+  }, 600);
+});
+
+Promise.all([firstPromise, secondPromise, thirdPromise])
+  .then((results) => {
+    // i will come here only if all promises are resolved
+    console.log(results);
+  })
+  .catch((error) => {
+    // If any promise fails i will come here.
+    console.log(error);
+  });
+
+// OUTPUT WILL BE
+/*
+     ["Result from second promise","Result from second promise",
+      "Result from third promise"]
+*/
+
+/***
+ *   LETS UNDERSTAND IT IN VERY BASIC WAY :
+ *   // ALL OF THEN WILL ACCEPT ARRAY OF PROMISES SEE THIS ARE UTILITY METHODS OF PROMISES
+ *
+ *   Promise.all() : i will return you result only if all of promises are resolved successfully
+ *
+ *   Promise.allSetteled() : See i care only about those who are resoved so don't worry even single one of them will be passed then i will return
+ *   you that i don't care about reject one but see if all of them are reject then i can't do anything i need to give you error as result
+ *
+ *  Promise.race : Life is race so here i come into picture give me 100 promises i care only that one who resolved or rejected first as soon as i get one promise
+ *  that is resolved or reject i will return you rest i don't care and thats why i said life is race if you are not first then you are last.
+ *
+ *  Promise.any() : SEE MAJOR THING I LEARENED TODAY IS IN CASE OF PROMISE.RACE() IT DOES NOT CARE ABOUT RESOVED OR REJECTED IT WILL RESET FIRST PROMISE
+ *  FOR SURE IN CASE OF PROMISE.ANY() I WILL RETURN YOU FIRST RESOLVED PROMISE.
+ *
+ *   REMEMBER THIS PROMISE.RACE() FIRST RESOVED OR REJECTED
+ *   PROMISE.ANY() FIRST RESOLVED
+ *   PROMISE.ALLSETTELED() ALL RESOLVED
+ *   PROMISE.ALL : IF ANY OF PROMISED FAILD THEN NO RESULT WILL BE GIVE
+ */
