@@ -275,4 +275,102 @@ export { horizontalScale, verticalScale, moderateScale };
 /**
  *  Dimention , Flexbox , percentage , aspect ratio for images mainly and one last and most importent one is use
  *  platform api have different style for different company
+ *
  */
+
+/***
+ *  TOP 5 COMPONENT LIBRARY FOR REACT NATIVE
+ *
+ *  TWO THAT I USED IS
+ *
+ *  REACT-NATIVE ELEMENT
+ *  NATIVE BASE
+ */
+
+/**
+ *  ONE TOME WATCH ON NATIVE BASE COMPONENT   :  THESE THRE ARE LIKE BASE
+ *
+ *   Box:  In UI frameworks, a "Box" generally refers to a container or view that can hold other UI elements. It's a fundamental building block for organizing and structuring
+ *   the layout of a user interface.
+ *
+ *  HStack : If you wants things in horizontal view
+ *
+ *  VStack : If you wants things in vertical view
+ *
+ */
+
+/**
+    TOP 10 USED COMPONENT OF  NATIVE BASE 
+    
+    Button:
+    Card:
+    Header:
+    Footer:
+    Form:
+    List:
+    Badge:
+    Icon:
+    Spinner:
+    Thumbnail:
+
+Allows you to display images in a circular or square thumbnail format, commonly used for user avatars or image previews.
+ */
+
+/**
+ *  SEE ONE THING TO REMEMBER THAT FOR LOCAL STORAGE WE USE ASYNTORAGE
+ *  IF YOU NEED TO STORE DATA ENCRYPDATED THEN USE react-native-mmkv
+ */
+
+/**
+ *  LETS REMEMBER FEW THING ABOUT MMKV 
+ * 
+ * import { MMKV } from 'react-native-mmkv'
+
+export const storage = new MMKV({
+  id: `user-${userId}-storage`,   // IF YOU WANTED TO HAVE MULTIPLE INSTANCE THATS WHY IT NEED ID
+  path: `${USER_DIRECTORY}/storage`, // BY DEFAULT IT STORES IN 'document/mmkv'
+  encryptionKey: 'hunter2'
+})
+ */
+
+/**
+ *  Set
+storage.set('user.name', 'Marc')
+storage.set('user.age', 21)
+storage.set('is-mmkv-fast-asf', true)
+Get
+const username = storage.getString('user.name') // 'Marc'
+const age = storage.getNumber('user.age') // 21
+const isMmkvFastAsf = storage.getBoolean('is-mmkv-fast-asf') // true
+Keys
+// checking if a specific key exists
+const hasUsername = storage.contains('user.name')
+
+// getting all keys
+const keys = storage.getAllKeys() // ['user.name', 'user.age', 'is-mmkv-fast-asf']
+
+// delete a specific key + value
+storage.delete('user.name')
+
+// delete all keys
+storage.clearAll()
+ */
+
+/**
+ *  ALL METHODS ARE SAME ITS JUST DATA STORED IN ENCREPTED WAY THATS IT ALSO ONE MORE BENIFIT OF MMKV STORAGE THAT WE CAN
+ *  CREATE MULTIPLE INSTANCE IF WE NEED
+ */
+
+/**
+ *  SEE REAGARDING LOCAL STORAGE ASYNSTORAGE IS MORE THEN ENOUGH BUT STILL THERE ARE DIFFERNT
+ *  OPTION LIKE
+ *
+ *   REALM
+ *   WATERMELONDB : WE WILL LEARN ONLY 30 MIN ABOUT IT https://www.youtube.com/watch?v=abq6zxurflI
+ *   SQLITE
+ *
+ */
+
+
+
+https://www.youtube.com/watch?v=bcTF9bVVqKg // MUST WATCH THIS 
