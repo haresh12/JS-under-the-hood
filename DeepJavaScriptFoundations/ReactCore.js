@@ -154,3 +154,125 @@
  *  GRAPH QL : (YEP THAT ALSO MANAGE GLOBAL STATE MANGEMENT useQuery and useMutation)
  *  useReducer : (THIS IS NEW HOOK WE NEED TO LEARN MORE WHEN WE TALK ABOUT HOOKS)
  */
+
+/**
+ *  HOW DO YOU MAKE RESPONSIVE UI AND SOME UI LIBRARY
+ *
+ *   1. HERE FIRST QUESTION I WILL ASK MY SELF IS WHAT IS PX AND WHAT ARE THE DIFFERNT THINGS THAT WE CAN USE APART FROM
+ *
+ *   NOW AFTER 5 YEARS I CAME TO KNOW THAT IN REACT NATIVE BY DEFAULT ITS DP NOT PX
+ *
+ *  DP : All dimensions in React Native are unitless, and represent density-independent pixels. (VVVMI) (DP IS SIMPLE
+ *  ONE TYPE OF UNIT)
+ *
+ *  The Dimensions api returns the width and height of the device in dp.
+ *
+ *  In React Native, it's a common practice to use a number without specifying a unit for properties like
+ *  fontSize. However, if you specifically want to specify the unit, you can use the fontSize property with
+ *  the desired unit. For example, you can use "rem" (root em) or "em" units as well. Here's an example:
+ *
+ *  In React Native, using "px" (pixels) as a unit for styles is generally not recommended.  (VVMI)
+ *
+ *  ALL TILL NOW I UNDERSTOOD IS DON'T BE SMART JUST USE DEFAULT ONE DP AND THAT ALSO YOU DON'T NEED TO SPECIFY THE
+ *  UNIT
+ * 
+ * 
+     In React Native, using "px" (pixels) as a unit for styles is generally not recommended. React Native abstracts away 
+     the differences in screen densities by using density-independent pixels (dp or points). When you use a numeric value 
+     without a unit, React Native interprets it as dp or points and adjusts the size according to the screen 
+     density of the device.
+
+     If you explicitly use "px" as a unit, it may not scale appropriately across devices with different pixel densities. 
+     Therefore, it's a good practice to stick with numeric values without specifying a unit, letting React Native handle
+     the scaling for you.
+ *
+ */
+
+/**  BEST POSSIBLE EXAMPLE 
+ * 
+ * DP (Density-independent Pixels): Think of DP as a special pen that helps you draw lines on the paper in a way that 
+ * looks good no matter if the paper is smooth or a bit rough. So, when you use this pen, your drawings will be a good 
+ * size and won't look too big or too small on different types of paper.
+
+  PX (Pixels): Now, imagine you have a regular pen. If you use this pen to draw, the size of your drawing might 
+  look different on smooth paper compared to rough paper. Pixels are like the dots on the paper, and using them might 
+  make your drawing too big or too small on different types of paper.
+
+   In React Native, we often use DP because it's like that special pen that helps our app look nice and the right
+   size on all kinds of devices, just like your drawings look good on different types of paper!
+ */
+
+/**
+ *  BEST THING KNOW I UNDERSTOOD WHY WE SHOULD NOT USE PX ATLEAST FOR MOBILE
+ *
+ *   If you use PX directly, it's like saying, "Make this exactly this many dots on the screen." The problem is,
+ *   different devices have different numbers of dots (pixel densities), so your app might look too big on one
+ *   device and too small on another.
+ */
+
+/***
+ *  TILL KNOW I UNDERSTOOD THAT WHAT IS DIFFERNT BETWEEN PX AND DP AND WHY DP IS GREATE CHOISE FOR MOBILE
+ *
+ *  NOW NEXT QUESTION TELL ME HOW DO YOU MAKE YOUR APP COMPATIBLE WITH MOST OF DEVICE :
+ *
+ *  https://medium.com/simform-engineering/create-responsive-design-in-react-native-f84522a44365  (BEST)
+ * 
+ * 1. Dimensions
+   2. Flexbox
+   3. Percentage
+   4. Aspect Ratio
+   5. Platform
+ *
+ *
+ */
+
+// POINT 1 : USE DIMANTION :  THIS IS MI POINT TO UNDERSTAND HOW DIMANTION CAN HELP US
+import { Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+
+const guidelineBaseWidth = 375; // YOUR FIGMA DESIGN HEIGHT
+const guidelineBaseHeight = 812; // YOUR FIGMA DESIGN WIDTH
+
+const horizontalScale = (size) => (width / guidelineBaseWidth) * size;
+const verticalScale = (size) => (height / guidelineBaseHeight) * size;
+const moderateScale = (size, factor = 0.5) =>
+  size + (horizontalScale(size) - size) * factor;
+
+export { horizontalScale, verticalScale, moderateScale };
+
+/**
+ * POINT 2 :  Flexbox ( It will automatically calculate the size of the device and adjust the component accordingly) (VVMI)
+ *
+ *  It is the default layout type in React Native. It will automatically calculate the size of the device
+ *  and adjust the component accordingly. It works in the same way as in CSS on the web, but here the default flex-direction is 'column'. Some of the major properties that’ll do your work most of the time are flex, flex-direction, justify-content, align-items, and align-self.
+ */
+
+/**
+ *  POINT 3 : Percentage : I THINK THIS IS ONE OF THE MOST UNDERRATED BUT AT SAME TIME MOST IMPORTENT POINT
+ *
+ *  RATHER THEN GIVING HARDCORE HEIGHT AND WIDTH TRY TO USE PERCENTAGE MOST OF THE TIME ONE QUESTION I HAVE DOES IT GOING
+ *  TO IMPECT ON PERFORMANCE BECAUSE NOW BEFORE COMPONENT RENDER REACT NEED TO CALCULATE THE HEIGHT AND WIDTH OF THE COMPONENT
+ */
+
+/**
+ *  POINT 4 : ASPECT RATIO : GREAT THING TO LEARN (MAKE SURE ITS ONLY FOR IMAGES)
+ *
+ *  An aspect ratio is — a proportional relationship between an image’s width and height.
+ *
+ * Setting the aspect ratio of the component to something (say 1/2) is basically telling the component
+ * that it can grow or shrink as much as it wants according to the space available, but its width to height
+ * ratio should always be 1/2. In other words, the height should always be twice the width.
+ *
+ *  1/2 => BHAI TU KITNE BI AGE BAD JA BUT MAKE SURE THAT MERI HEIGHT TERE SE DOUBLE HONI CHAIYE
+ */
+
+/**
+ *  POINT 5 : Platform specific UI => YES DON'T IGORE THIS MAKE SURE TO DO STYLES BASE OF PLATFORM AND MAKE SURE TO
+ *  CREATE DIFFERNT STYLES BASED ON PLATFORM IF NEEDED
+ */
+
+/**
+ *  Dimention , Flexbox , percentage , aspect ratio for images mainly and one last and most importent one is use
+ *  platform api have different style for different company
+ */
