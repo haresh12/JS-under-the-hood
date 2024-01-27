@@ -340,3 +340,105 @@ isMyShop : true,onStore : true}
 // INTERFACE CAN BE EXTENDED
 // INTERFACE CAN BE REOPENED YES I GOT THAT POINT NOW
 // TRY TO USE INTERFACE MOST OF THE PLACES
+
+/**
+ * noImplicityAny yaad rakhna
+ * UNION
+ * TYPE ALIES
+ * NEVER AND VOID
+ * INTERFACE
+ * ENUM
+ * TUPLE
+ * readonly
+ * optional 
+ * & ; for multiple type alies
+ * 
+ */
+
+/**
+ *  outDir in tsconfig : // YOU CAN DEFINE WHERE SHOULD OUTPUT GOES
+ * 
+ *   tsc --init ; // USED TO CREATE ts config file
+ * 
+ *   tsc -w // for watch mode
+ */
+
+/**
+ *  PUBLIC AND PRIVATE KEYWORD (HOPING THAT THIS ARE SAME AS JAVA)
+ */
+
+/**
+ *  TYPE MODIFIER IN TYPESCRIPT PUBLIC PRIVATE READONLY
+ *  MAKE SURE YOU DON'T FORGET THAT ITS MODIFIER
+ *  # IN JS MAKE SENSE AS PRIVATE
+ * 
+ *  # IN JAVASCRIPT AND PRIVATE IN TS
+ * 
+ *  PUBLIC PRIVATE READONLY # MODIFIER IN TS AND JS 
+ * 
+ *  get set I REALLY DON'T THING WE FOLLOW THIS STRUCTURE IN
+ *  MOST OF THE PROJECT EXPECT TIGER 21 
+ * 
+ *  get set private public this all remind me on JAVA KOTLIN
+ *  JUST TO PROVIDE DATA HIDING 
+ * 
+ *  SET DOES OT RETURN ANYTHING AND GET SHOULD ALWAYS RETRUN SOMETHING
+ *   
+ *  MAKE SURE ABOUT SET ITS LIKE INTERVIEW QUESION BECAUSE IT DOES 
+ *  NOT RETURN ANYTHING
+ * 
+ *  SAME AS PRIVATE PROPERTY WE CAN HAVE PRIVATE METHODS ALSO
+ * 
+ *  DON'T LEARN MUCH ABOUT OOPS CONCEPT FOR NOW 
+ * 
+ *  IN ABRESCT CLASS METHOD IMPLEMENTATION ALSO POSIBLE 
+ */
+
+/**
+ *  GENERAIC ONE OF THE MOST IMPORTENT THING NEED TO UNDERSTAND
+ */
+
+// BEST ONE EXAMPLE FOR GENERICS
+
+// function identity(arg : number) : number{
+//     return 1
+// }
+
+// // WHAT IF I NEED ONE FUNCTION THAT ACCEPT STRING AND RETURN STRING
+// function identity(arg : string) : string{
+//     return "a"
+// }
+
+// // WHAT IF I NEED ONE FUNCTION THAT ACCEPT BOOLEN AND RETURN BOOLEN
+// function identity(arg : boolean) : boolean{
+//     return false
+// }
+
+function identity<T>(arg : T) : T{
+    return arg
+}
+
+// HOW WEIRD THIS SYTEX LOOKS
+const identityWithArrow  = <T>(pro : T[]) : T => {
+    return pro[1]
+}
+
+
+// YOU CAN CREATE GENERAIC CLASS ALSO THE WAY YOU CREATED GENERIC
+// FUNCTIONS
+
+// typeOf is used as TYPE GUARD JUST FENCY NAME BUT SIMPLY WE NEED
+// TO CHECK TYPE WHEN WE ARE NOT SURE WHAT VALUE WE HAVE
+
+// BASICALLY UNDERSTAND IN TS IS KNOW AS TYPE GUARD
+let x  : string | number | boolean
+x=0;
+if(typeof x ===  'string'){
+    x = x + parseInt(x)
+}else{
+     x = x + 5
+}
+
+// Discrimant UNION is just one field in each interface will have
+// different value we can check according to that function what
+// type is basically returned
