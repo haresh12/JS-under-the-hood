@@ -53,3 +53,104 @@
  *
  *   ENITER POINT HERE IS REMOVE BRIDGE AND USE JSI AS MUCH AS POSSIBLE
  */
+
+/**
+ *  GLOBAL STATE MANAGMENT : WHY WHEN WHAT YOU WILL SELECT
+ *
+ *  SEE WE MOSTLY SAY THAT WE USE REDUX OR ANY GLOBAL STATE MANGEMENT SYSTEM TO SOLVE THE PROPS DRILING PROBLEM
+ *  BUT MAN THING ABOUT THE CASE WHEN WE DON'T HAVE ANY RELEASE BETWEEN THEN THEN HOW YOU WILL TRANSFER DATA BETWEEN
+ *  THEM DOES IT MAKE SENSE FOR YOU ?
+ *
+ */
+
+/**
+ *   OK HARESH CAN I CREATE MY OWN REDUX THEN ?
+ *
+ *  For communication between two components that don’t have a parent-child relationship, you can set up your own global
+ *  event system.
+ *
+ *  Subscribe to events in componentDidMount(), unsubscribe in componentWillUnmount(), and call setState() when you receive an event
+ *
+ *   SO SIMPLY WITH JS LISTNER YOU CAN SUBSCRIBE AND UNSUBSCRIB EVENT BASED ON DIFFERENT SITUATION AND
+ *   THEN YOU CAN SET THE STATE ACCORDING TO YOUR NEED
+ *
+ *  SEE ONE MORE INTERSTING THING IN REDUX NO MATTER HOW MAY SLICES OR REDUCER YOU CREATE IT BEHAVES AS SINGLE OBJECT
+ *  AND THAT SINGLE OBJECT LISTEN TO THE CHANGES AND USE SETSTATE IN BACKGROUND OVERALL ITS JUST GAME OF SINGLE STORE
+ *  THAT LISTENING THE EVENT CHANGES.
+ *
+ *  THIS IS ALSO I WAS NOT ABLE TO ANSWER IN INTERVIEW : MAN NOTHING HARD IN IT THINK LIKE ONE BIG OBJECT LISTENING YOUR
+ *  CHANGES AND THEN USING SETSTATE IN BACKGROUND TO MAKE SURE THE ENITER APP IS UPDATED
+ */
+
+/**
+ *  FEW IMPORTENT THING ABOUT REDUX :
+ *
+ *  (predictable) state container for our application (WHY PREDICTABLE STATE CONTAINER)
+ *
+ *  BECAUSE SEE IN REDUX YOU CAN NOT DIRECTLY MODIFY THE DATA YOU HAVE TO DISCPATCH THE ACTION FROM THAT
+ *
+ *  ALSO FOR ENTIRE APP WE HAVE ONLY ONE BIG IMMUTABLE OBJECT (IMMER DON'T FORGOT TO EXPLAIN THIS IF THE ASK)
+ */
+
+/**
+ *  SO SEE ABOVE ARE THE FEW IMPORTENT POINT ABOUT REDUX NOW ABOUT REDUX TOOLKIT WE ALREADY HAVE GOOD IDEA
+ *
+ *  IMPORTENT WORDS THAT NEED TO BE REMEMBER :
+ *
+ *  createSlice
+ *  initalData
+ *  extraReducer
+ *  thunk inbuild
+ *  configureStore
+ *  useSelector
+ *  useDispatch
+ */
+
+/**
+ *   State the core principles of Redux :
+ *   Single source of truth:
+ *   The state is read-only:
+ *   Changes are made with pure functions:
+ */
+
+/**
+ *  SEE REDUX IS ONE THING BUT ANOTHER QUESTION CAN BE COME LIKE ABOUT MIDDLEWARE
+ *  SAGA AND THUNK
+ *
+ *  MAKE SURE THAT IN configure store as second parameter you have to pass applyMiddleWare(thunk/saga)
+ */
+
+/**
+ *  https://daveceddia.com/what-is-a-thunk/ (READ ONE MORE TIME)
+ *
+ *  BUT TO BE REALLY I THING THUNK IS FOLLOWING BASICALLY CLOSURE STRUCTURE LIKE YOU HAVE MAIN FUNCTION AND INSIDE
+ *  THAT YOU HAVE ANOTHER FUNCTION THAT RETURN THE API CALL AND
+ *
+ *  MI THING THAT WHY WE ARE DOING EVERYTING AT REDUCER LEVEL CAN'T WE DO IT AT COMPONTENT LEVEL WHILE WE DISPATCH THE
+ *  ACTION AND WE DON'T DO THAT BECAUSE CHANGES ARE MADE WITH PURE FUNCTIONS
+ */
+
+/**
+ * Well, this is exactly what redux-thunk does: it is a middleware that looks at
+ * every action that passes through the system, and if it’s a function, it calls that function.
+ * That’s all it does.
+ */
+
+/**
+ * The only thing I left out of that little code snippet is that Redux will pass two arguments
+ * to thunk functions: dispatch, so that they can dispatch new actions if they need to;
+ * and getState, so they can access the current state. So you can do things like this:
+ */
+
+/***
+ *  ALSO MOST IMPORTENT THING WE HAVE BELOW FAMOUS OPTION FOR GLOBAL STATE MANAGEMENT
+ *
+ *  REDUX
+ *  MOBX
+ *  FLUX
+ *  RTK QUEAY
+ *  REACT QUERY
+ *  CONTEXT API
+ *  GRAPH QL : (YEP THAT ALSO MANAGE GLOBAL STATE MANGEMENT useQuery and useMutation)
+ *  useReducer : (THIS IS NEW HOOK WE NEED TO LEARN MORE WHEN WE TALK ABOUT HOOKS)
+ */
