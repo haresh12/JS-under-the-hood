@@ -134,3 +134,95 @@ function getMyUser(user: User): User {
  *   TYPE ALIES  type haresh = {}
  *   NEVER AND VOID MMMMMI
  */
+
+/** MI THINGS
+ *  readonly : NO ONE SHOULD ABLE TO CHANGE IT
+ *  ? : OPTIONAL PASS OR DON'T PASS I DON'T CARE
+ *
+ */
+
+type USER = {
+  readonly id: string;
+  name: string;
+  card?: number;
+};
+
+let myUser: USER = { id: "1", name: "a" };
+
+myUser.id = "asdad"; // YOU CAN NOT CHANGE IT BROTHER
+
+// ALSO WHY HAVE'T YOU PASSED THE CARD BECAUSE ITS OPTIONAL
+
+/**
+ *  NEXT IMPORTENT AND USEFUL THING THAT I HAVE LEARNED IS THAT
+ *  HOW YOU CAN COMBINE THE TYPES
+ *
+ */
+
+type some = {
+  name: string;
+};
+
+type date = {
+  value: string;
+};
+
+type card = some &
+  date & {
+    number: string;
+  };
+
+/**
+ *  ONE OF THE BIGGEST MISTAKE YOU CAN DO IS THAT  ASSIGNING
+ *  WHILE COMBINING THE VALUE DON'T USE && MAKE SURE TO USE &
+ */
+
+/**
+ *  THINGS THAT LEARNED
+ *
+ *  TYPE INFER
+ *  UNION TYPE
+ *  TYPE ALIES
+ *  READ ONLY
+ *  OPTIONAL
+ *  COMBINE TYPES
+ *  NEVER AND VOID : DEFAULT IS VOID AND NEVER WHEN YOU WANT TO THROUGH ERROR
+ */
+
+/**
+ *  ARRAY IN TS DEFAULT TYPE IS NEVER WEIRD AND NEW FOR ME
+ */
+
+// VERY SIMPLE
+
+let superHeros: string[] = ["haresh", "hitesh", "jay"];
+
+let salary: number[] = [121, 132, 11];
+
+// ALSO YOU CAN GIVE CUSTOM TYPE LIKE DIFFERNT TYPE ALIES
+
+let users: Array<USER>;
+
+// UNION : DON'T USE ANY INSTEND USE UNION MMI
+
+type USERR = {
+  name: string;
+  role: string;
+};
+
+type ADMIN = {
+  name: string;
+  role: string;
+  priceChange: number;
+};
+
+// NOW HARESH CAN BE USER OR ADMIN I AM NOT SURE IN THAT CASE USE UNION
+// THIS UNION LIST CAN BE AS LONG AS YOU WANT
+let hitesh: USERR | ADMIN | USER;
+
+// GOOD THING TO LEARN ABOUT UNION
+// SUPPOSE IN ONE ARRAY YOU NEED BOTH TYPE STRING AND NUMBER
+// HOW WOULD YOU DEAL WITH THAT
+
+let notGoodWay: string[] | number[];
+let goodWayArray: (string | number)[]; // THIS IS MOST IMPORTENT
