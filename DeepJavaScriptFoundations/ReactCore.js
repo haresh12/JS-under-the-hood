@@ -599,3 +599,152 @@ initialNumToRender : how many items you want to load initially
   *  INPUT SENTIZATION
   *  CROSS SCRIPTING ATTESK : HTML SENITAIZTION  sanitize-html library 
   */
+
+
+ /**
+  *  8 Essential TypeScript Utility Types You Need to Know
+  * 
+  *  Partial => sab ko optional bana deta he
+  *  Required => Sab ko require bana deta he
+  *  ReadOnly =: Sab ko Read only bana data he 
+  *  Pick =:> Koi bade object me se do teen properite pick krni ho to use kr
+  *  skte he
+  *  Omit => koi bade object me se 2 3 properties omit krni hoto use kr skte he
+  */
+
+
+ /**
+  * partial
+  * Required
+  * ReadOnly
+  * Pick
+  * Omit
+  */
+
+
+
+ /**
+  *  UTLITY FUNCTION 
+  *  
+  *  Partial
+  *  ReadOnly
+  *  Required
+  *  Omit
+  *  Pick
+  * 
+  *  Dimantion
+  *  Aspect Ratio
+  *  Percentage
+  *  flexbox
+  *  Platform API
+  * 
+  *  maxRenderPerBatch
+  *  initalRender
+  *  windowSize
+  *  getItemLayout
+  *  Avoid inline rendering
+  * 
+  *  useMemo and useCallBack
+  *  useRef insted of useState
+  *  Avoid unncesory props
+  * 
+  *  input senitization
+  *  Cross site scripting (senitize html)
+  *  Cross site scripting frozery
+  *  error handling
+  *  Authentication 
+  *  Secure data MMKV
+  * 
+  *  PAGINATION  
+  * 
+  *   onEndReched
+  *   onEndReachedThreshold
+  * 
+  */
+
+
+ /***
+  *  MI TOPIC OF THE DAY USEMEMO USECALLBACK AND USEREF
+  * 
+  *   const result = useMemo(() => badaOperation(),[dependency])
+  * 
+  *   // MAKE SURE USEMEMO RETURN THE VALUE WHERE USE CALLBACK 
+  *     RETURN THE ENTIRE FUNCTION
+  * 
+  *   CATCHING THE RESULT VS CATHING THE FUNCTION DEFINATION
+  * 
+  *  THERE ARE THE CASES WHEN YOU REALLY DON'T NEED TO RENDER YOUR
+  *  COMPONENT IN THAT CASE YOU CAN USE useRef 
+  * 
+  *  THINK ABOUT IT LIKE FOR TOAST MESSAGE FOR AND MORE BEST EXAMPLE
+  *  WOULD BE I WOULD LIKE TO USE SOME METHODS OF TEXTINPUT IN THAT
+  *  CASE I REALLY DON'T WANT TO UPDATE ANYTHING OVER SCREEN SO 
+  *  FOR THOSE CASES USE REF CAN BE USEFUL
+  * 
+  *   THREE THING
+  *    
+  *    useMemo take function and dependency and return value
+  *    useCallBack take function and dependecy and return function
+  *    useRef when you don't want to re render your component
+  * 
+  *    THREE TYPE OF VARIABLE 
+  * 
+  *    NORMAL VARIABLE 
+  *    STATE VARIABLE
+  *    REF VARIABLE
+  *  
+  */
+
+ /**
+  *  Component life cycle
+  *    DEVIDED INTO 4 PART
+  *   Mounting
+  *   updating
+  *   error bounderies
+  *   unmounting
+  */
+
+
+ /**
+  *   LET SEE WHAT GET CALLED FIRST
+  * 
+  *  // THIS ARE THE MOSTLY USED METHOD
+  *   CONSTRUCTOR  // ONLY ONCE
+  *   render()  
+  *   componentDidMount // ONLY ONCE
+  *   componentDidUpate // EVERY TIME STATE CHANGES
+  *   componentWillUnMount // Its going out of screen
+  */
+
+
+ /**
+  *  TELL ME 5 MOSTLY USED METHOD OF REACT CYCLE
+  * 
+  *  constructor // ONCE
+  *  render
+  *  componentDidMount // ONCE
+  *  componentDidUpdate 
+  *  componentWillUnMount // when component is getting killed or you are changing the screen
+  */
+
+
+ /**
+  *  FEW NOT MOSTLY USED REACT LIFE CYCYLE METHOD
+  *   
+  *  shouldComponentUpdate() ; if you want to handle or save few renders
+  *  getDerivedState
+  */
+
+ /**
+  *  SEE THIS ALL METHODS ARE USED  LIKE 4 TO 5 YEARS AGO SO ITS FINE IF 
+  *  WE DON;T REMEBER EVERYTHING JUST REMEMBER TOP 5 
+  * 
+  *   CONSTRUTOR() // ONCE
+  *   RENDER()
+  *   COMPONANTEDIDMOUNT() // ONCE
+  *   COMPONENTDIDUPDATE()
+  *   COMPONENTWILLUNMOUNT()
+  *   SHOULDCOMPONENTDIDUPDATE() // DON'T USE RECOMMEDED HELP US TO STOP FEW 
+  *                                 UNNACERY RENDERING
+  * 
+  */
