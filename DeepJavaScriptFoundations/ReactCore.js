@@ -572,3 +572,30 @@ initialNumToRender : how many items you want to load initially
   *  Create modles for every tables and simple use Create , Update delete
   *  and all this methods
   */
+
+
+ /**
+  *  INPUT SENTIZATION IS BEST WAY TO SECURE YOUR APP
+  *  MAKE SURE WHAT KIND OF 3RD PARTY LIBRARY YOU ARE USING 
+  *  To prevent XSS attacks, you should always sanitize user input before displaying it in the UI.
+  *  sanitize-html library 
+  * 
+  * Cross-site request forgery (CSRF): To prevent CSRF attacks, you should always include
+  *  a CSRF token in any requests that modify data on the server.
+  * 
+  *  Error handling: 
+  *   Implement proper error handling to prevent sensitive information from
+  *   being leaked to attackers. Avoid displaying detailed error messages to 
+  *   users that could reveal sensitive information. 
+  */
+
+
+
+
+
+
+
+ /**
+  *  INPUT SENTIZATION
+  *  CROSS SCRIPTING ATTESK : HTML SENITAIZTION  sanitize-html library 
+  */
