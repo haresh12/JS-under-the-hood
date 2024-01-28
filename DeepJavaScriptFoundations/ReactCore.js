@@ -872,3 +872,104 @@ initialNumToRender : how many items you want to load initially
   /**
    *  useReducer : I THING THIS IS IMPORTENT HOOK
    */
+
+
+  /**
+   *  CONTROLLED COMPONTENT : SEE BROTHER MY STATE IS MANAGE BY MY PARENT COMPONENT 
+   *  SO MY PARENT HAS CONTROLLED ON ME THATS WHY I AM KNOW AS CONTROLLED COMPONENT
+   */
+
+  /**
+   *  UNCONTROLLED COMPONENT : SEE BROTHER I AM THE OWNER OF MY SELF I HANDLE EVERYTHING
+   *  BY MY SELF I DON'T NEED ANYONE TO HANDLE ME SO I AM UNCONTROLLED COMPONENT
+   */
+
+
+  /**
+   *  STATES ARE MUTABLE AND 
+   * 
+   *  PROPS ARE IMMUTABLE
+   * 
+   *  SEE ONE THING YOU NEED TO UNDERSTAND THAT WE CAN PASS STATE AS PROPS ALSO
+   */
+
+
+  /**
+   *  14. What are error boundaries?
+   * 
+   * Introduced in version 16 of React, Error boundaries provide a way for us to catch errors that occur in the render phase.
+
+
+
+  IF THERE ARE SOME ERRORS THAT HAPPEN ON RENDER PHASE FOR THAT WE CAN USE ERROR BOUNDRY
+
+  */
+
+  /**
+   * HARESH I HAVE SOME ERROR IN RENDER PHASE HOW CAN I CATCH THOSE ERROR SIMPLY USE
+   * ERROR BOUNDRY THAT IS INTRODUCE IN REACT 16
+   */
+
+
+  /**
+   *  MAKE SURE YOUR HOOKS ARE ON TOP LEVEL ALWAYS 
+   *  MAKU SURE YOUR HOOKS ARE INSIDE FUNCTION COMPONENT
+   *  MAKE SURE NOT TO USE HOOKS INSIDE ANY KIND OF LOOPS
+   */
+
+
+  /**
+   *  SEE YOU DON'T WANT TO RENDER THE COMPONENT AGAIN BUT STILL YOU WANT OT PRESEVE SOME
+   *  VALUE AT THAT TIME PLEASE PLEASE PLEASE USE useRef
+   */
+
+
+  /**
+   *  1. Explain Strict Mode in React.   (VVVVVMI)
+   * 
+   *   StrictMode is a tool added in version 16.3 of React to highlight potential problems in an application. 
+   *   It performs additional checks on the application.
+   * 
+   *   JUST TO CHECK THAT YOU ARE NOT USING ANY LAGECY METHODS
+   *   JUST TO MAKE SURE THAT YOUR COMPONENT RENDER FINES 
+   * 
+   *  SEE EVEN IF YOU DON'T KNOW THE ANSWER THEN ATLEAST SAY THAT I DO LITTLE BIT TESTING FROM REACT SIDE TO MAKE 
+   *  SURE THAT YOU ARE GOOD TO DO WITH THIS COMPONENT AND REACT STRICK MODE RENDER COMPONENT TWICE TO CHECK THAT
+
+   */
+
+
+  /**
+   * inline style
+   * StyleSheet.create => this one is good because it gives you proper red error also if you tries to use wrong style for
+   * anything given then example fontSize if you tries to apply this style on text then it will slap you like anything
+   */
+
+
+  /**
+   *  YOU CAN FORGET ANYTHING BUT NEVER FORGET ABOUT LAZY LOADING AND CODE SPITTING WHEN WE TALK ABOUT PERFORMANCE 
+   * 
+   *  SEE THEY ARE THE PART OF CORE OF REACT SO ALL YOU HAVE TO DO IS IMPORT THAT COMPONENT INSIDE LAZY LOADING
+   *  AND THEN ALSO WRAP THAT COMPONENT WITH SUSPENSE
+   * 
+   *  ALSO HERE FALLBACK COMES INTO WHEN FOR SOME REASON REACT DOES NOT FIND THAT COMPONENT SO MAKE YOU HAVE PROPER 
+   *  FALLBACK HANDLED
+   */
+
+import React, { lazy, Suspense } from "react";
+import { Text, View } from "react-native";
+import { styles } from "./styles";
+
+const ComplexComponent = lazy(() => import("./ComplexComponent"));
+
+function App() {
+  return (
+    <View style={styles.container}>
+      <Suspense fallback={() => <Text>Loading ....</Text>}>
+        <ComplexComponent />
+      </Suspense>
+    </View>
+  );
+}
+
+export default App;
