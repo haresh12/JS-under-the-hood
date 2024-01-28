@@ -453,3 +453,122 @@ const EnhancedComment = enhance(Comment)
  *   MI STEPS IS RUN npx react-native assets COMMOND TO RUN THE LINK THE ASSET FOLDER
  *   USE FONFAMILY FO APPLY FONT 
  */
+
+/**
+ *  HOW CAN I MAKE FLATLIST FAST : 
+ * 
+ *  IF YOUR LIST ITEM HEIGHT IS FIX THEN MUST USE  getItemLayout 
+ *  getItemLayout={(data, index) => (
+    {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
+  )}
+    
+  maxToRenderPerBatch and windowSize : 
+maxToRenderPerBatch limits the number of items rendered per batch, reducing the load. 
+windowSize defines the number of "pages" of items rendered in either direction from the visible content.
+   
+
+initialNumToRender : how many items you want to load initially
+
+ Avoid Inline Functions and Variables in Render
+
+ Passing inline functions or variables to a FlatList or its items can cause unnecessary re-renders 
+ because every render creates a new function or object, causing the props to change.
+ */
+
+
+ /***
+  *  getItemLayout BEST
+  *  maxRenderPerBetch
+  *  Avoid using inline function 
+  *  window size
+  *  initailNumberOfRender
+  */
+
+
+ /**
+  *  getItemLayout 
+  *  maxRenderPerBetch
+  *  windowSize
+  *  initalNumberOfRender
+  *  Avoid inline function
+  */
+
+ /**
+  *  THIS IS THE MOST IMPORTENT THING THAT WE NEED TO REMEMBER FOR 
+  *  FLATLIST PAGGINANTION
+  * 
+  *  onEndReached and onEndReachedThresholed
+  */
+
+
+
+ /**
+  *  dimantion
+  *  aspect ratio
+  *  Platform specific api
+  *  flexbox
+  *  percentage , percentage percentage 
+  *  
+  */
+
+ /**
+  *  getItemLayout
+  *  maxRenderPerBetch
+  *  windowSize
+  *  initalRenderNumber
+  *  AVOID UNNESSERY INLINE RENDERING
+  */
+
+
+ /**
+  *   AVOID REACT COMPONENT RENDERING 
+  * 
+  *   1. Memoization using useMemo() and UseCallback() Hooks
+  *   1. Replacing useState() with useRef() hook.
+  *   Avoid passing unnecessary props: Be mindful of the props you pass to child components. 
+  *   If a child component does not rely on a prop, avoid passing it to prevent unnecessary re-renders in the child component.
+  * 
+  */
+
+ /**
+  *  useRef rather then useState 
+  *  useCallBack and useMemo
+  *  Avoid unnessasery props
+  */
+
+
+
+ /**
+  *  getItemLayout
+  *  maxRenderPerBetch
+  *  initalRender
+  *  WindowSize
+  *  Avoid inline rendering 
+  */
+
+ /**
+  *  onEndReached
+  *  onEndReachedThreshold
+  */
+
+ /**
+  *  useMemo and useCallback
+  *  Be mindful with props 
+  *  useRef insted of useState whenver possible (Learn more about it)
+  */
+
+ /**
+  *  Assets/fonts
+  *  react native config export modules 
+  *  npx react-native assets (command to like)
+  *  fontfamily
+  */
+
+ /**
+  *  watemaled DB
+  *  
+  *  migration , scheam , SQLiteAdapter from that you create instance of Database
+  *  
+  *  Create modles for every tables and simple use Create , Update delete
+  *  and all this methods
+  */
