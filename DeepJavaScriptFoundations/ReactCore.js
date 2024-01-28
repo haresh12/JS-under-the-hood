@@ -372,5 +372,84 @@ storage.clearAll()
  */
 
 
+/***
+ *  OBSERVABEL
+ *  10000 RECORD WITHIN SECONDS
+ *  WORK WITH REACT AND REACT NATIVE
+ *  SqlAdapater 
+ *  schema
+ *  Database 
+ *  migration
+ *  200 ms 
+ *  Realy in native
+ *  Depend on Native
+ *  Adapter
+ *  .observe() // ITS OBSERVABLE
+ *  OFFLINE FIRST APP
+ */
 
 https://www.youtube.com/watch?v=bcTF9bVVqKg // MUST WATCH THIS 
+
+
+/**
+ *  SIMPLE EXAMPLE FOR WATERMALET DB 
+ */
+
+class Post extends Model {
+  @field('name') name
+  @field('body') body
+  @children('comments') comments
+}
+
+class Comment extends Model {
+  @field('body') body
+  @field('author') author
+}
+
+/**
+ *  FIRST PART IS SCHEM MIGRATION SQLIADAPTER AND ALL
+ *  BUT IMPORTENT PART IS THAT SUPPOSE YOU WANT TO SAVE SOME DATA THEN MUST CREATE MODELS FOR THAT MUST MEANS MUST
+ */
+
+/**
+ *   YOU HAVE TO USE withObservable thing to make it reactive make sure by default its not  reactive
+ */
+// This is how you make your app reactive! ✨
+const enhance = withObservables(['comment'], ({ comment }) => ({
+  comment,
+}))
+const EnhancedComment = enhance(Comment)
+
+/**
+ *  WaterMalen DB
+ *  Models
+ *  Schema 
+ *  Migration
+ *  Cratle modles 
+ *  To Make it reactive make sure you use the withObservable
+ *  Now once the database is created then make sure that you use get , add ,update , delete , create  , markAsDeleted ,
+ *  destroyParanatly 
+ */
+
+
+/**
+ *  HOW TO APPLY FONTS : https://www.youtube.com/watch?v=IY5OBeL9LNE 
+ * 
+ *  asstes/fonts all ttf files goes here ROBOTO
+ * 
+ *  IN REACT-NATIVE.CONIG
+ *  
+ *  export.modules = {
+ *   project : {
+ *     android : {},
+ *     ios : {}
+ *    },
+ *    assets : ['./assets/font']
+ *  }
+ * 
+ *   ONLY THREE SIMPLE STEPS 
+ *   PUT ALL FONTS NO ASSETS/FONT FOLDER
+ *   CREATE REACT NATIVE CONFIG FILE AND EXPORT ASSETS FONT MODULES THERE
+ *   MI STEPS IS RUN npx react-native assets COMMOND TO RUN THE LINK THE ASSET FOLDER
+ *   USE FONFAMILY FO APPLY FONT 
+ */
