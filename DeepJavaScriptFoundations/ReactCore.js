@@ -745,6 +745,130 @@ initialNumToRender : how many items you want to load initially
   *   COMPONENTDIDUPDATE()
   *   COMPONENTWILLUNMOUNT()
   *   SHOULDCOMPONENTDIDUPDATE() // DON'T USE RECOMMEDED HELP US TO STOP FEW 
-  *                                 UNNACERY RENDERING
-  * 
+  *                                 UNNACERY RENDERING 
   */
+
+
+ /**
+  *  DOM : Document Object Model
+    
+     SEE ONE SIDE YOU HAVE YOUR HTLM THAT JS DON'T UNDERSTAND AND ONE SIDE YOU
+     HAVE YOUR JS THAT HTML HAS NO IDEA ABOUT NOW THE THING IS THAT IF YOU 
+     UNDERSTAND AND THATS WHERE YOUR DOM COMES INTO PICTURE SEE ONE THING 
+     WE NEED TO LEARN IS DOM IS LIKE ONE BIG OBJECT THAT IS EXECTLY SAME
+     AS YOUR HTML AND JS UNDERSTAND OBJECT SO WHATEVER OPERATION WE 
+     OF JS WE HAVE TO PERFORM THAT WE CAN PERFORM WITH THID DOM OBJECT
+
+    ONE IMPORTENT THING THAT WE NEED TO LEARN IS THAT HTML AND JS BOTH 
+    ARE SYNCED ONLY BECAUSE OF DOM AND THAT SYNCRONIZED THING IS HANDLED
+    BY JAVASCRIPT RUNTIME ENVIROMENT
+  */
+
+  /**
+   *   https://www.youtube.com/watch?v=MPCVGFvgVEQ (ENTIRE REACT DOM , FIBRE
+   *    RECONCILATION)
+   * 
+   *   createRoot aap ke liye ek dom create krta he
+   *   React Fiber - Reimplemtation of core algorithm
+   *  
+   *   Incremantal rendering (MUST UNDERSTAED)
+   * 
+   *   YOU CAN PAUSE , ABORT AND REUSE WORK AS YOU UPDATE
+   * 
+   *   RECONSOLIACTION : CREATEROOT OR WEB VALI TREE CO COMPARE
+   * 
+   *   VIRUAL DOM =>>>>> RECONCILIATION ===>> DIFF ALGORITHM
+   * 
+   *   KEYS MUST BE UNIQUE , STABLE MAKE SURE YOU DON'T 
+   *   CONFUSE DIFF ALGORITHEM
+   * 
+   *   ABORT WORK PAUSE WORK REUSE WORK ALL THIS STUFF CAN BE 
+   *   DONE INSIDE REACT FIBER
+   */  
+
+
+  /**
+   *  0.73 NEW FEATURE 
+   *  Kotlin support , JAVA 17 SUPPORT 
+   *  NOW YOU NEED JDK 17 PREVIOUSLY WE WERE USING JDK
+   * 
+   *  HARMES ENGINE UPDATE :THIS IS JAVASCRIPT ENGINE 
+   *  SPECIALLY BUILD FOR REACT NATIVE
+   *  TILL NOW WE WERE USING JAVASCRIPT CORE 
+   *  
+   *  Android Gradle Plugin 7 Support: 
+   */
+
+
+  /**
+   *  I REALLY DON'T THING THERE IS SOMETHING MAJOR HAPPEND
+   * 
+   *  ITS LIKE FLIPPER SUPPORT FOR MORE STREAM LINE DEBUGGING
+   *  HARMES ENGINE UPDATE => SPECIALLY BUILD FOR REACT NATIVE
+   *  ANDROID GRADLE PLUGIN SUPPORT
+   *  KOTLIN OFFICAL RECOMMENDED AND SUPPORTED FOR NATIVE SIDE
+   *  
+   */
+
+
+  /** 
+   * constructor  // once
+   * render
+   * componentDIDMount // once
+   * componentDidUpdate 
+   * componentWillUnMount
+   */
+
+  /**
+   *  shouldUpdateComponet
+   *  getDerivedData
+   */
+
+
+  /**
+   *  DOM === JS OR HTML KO MILANE KA RASTA
+   */
+
+  /**
+   *  createRoot =>> THIS METHOD IS ENTIRE MAGIC OF VIRUAL DOM
+   *  RENCOLITION , FIBER 
+   * 
+   *  FIBER INCREMANTAL RENDER , PRIOTIZE TASK , 
+   *  ABORT TASK STOP AND PAUSE TASK ALL CREADIT GOES
+   *  TO FIBER
+   * 
+   *  CSS
+   *  SENITIZE HTML : IT GIVES YOU OPTION WHAT TAGE URL
+   *  ATTRIBUTES YOU WANT TO ALLOW
+   * 
+   *  INPUT SENITIZATION CAN BE DONE USING YEP
+   * 
+   *  ERROR HENDILING
+   * 
+   *  onEndReached
+   *  onEndReachedThreshold
+   *  
+   *  dimention
+   *  aspect ratio
+   *  percentage
+   *  flexbox
+   *  Platform specific
+   *  
+   */
+
+  /**
+   *  useId is good hook if you need unique id
+   */
+
+  /**
+   *  useLayoutEffect is a version of useEffect that fires before the browser repaints the screen.
+   */
+
+  /**
+   *  I WANT SOMETHING TO BE CALLED BEFORE EVEN MY LAYOUT GET PAINTED IN SCREEN 
+   *  THAT WHEN I WILL USE useLayoutEffect
+   */
+
+  /**
+   *  useReducer : I THING THIS IS IMPORTENT HOOK
+   */
