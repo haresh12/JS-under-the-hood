@@ -959,6 +959,7 @@ initialNumToRender : how many items you want to load initially
 import React, { lazy, Suspense } from "react";
 import { Text, View } from "react-native";
 import { styles } from "./styles";
+import { object } from "prop-types";
 
 const ComplexComponent = lazy(() => import("./ComplexComponent"));
 
@@ -973,3 +974,146 @@ function App() {
 }
 
 export default App;
+
+
+/**
+ * .test.js  test it both are same
+ */
+
+
+/**
+ *  render(<YOUR COMPONENT>)  render and screen both we get from libray
+ *  FIND THE ELEMENT
+ */
+
+/***
+ *  test or it
+ *  render 
+ *  screen getByText or getById
+ *  expect
+ */
+
+
+/**
+ *  DIFFERNT WAYS TO GET ELEMENTS getBy findBy queryBy getAllBy findAllBy queryAllBy
+ * 
+ *  for asyc operation then use findBy 
+ *  
+ *  queryBy will return null if you don't any match where other through error
+ * 
+ *  FOR ASYNC AWAIT FINDBY
+ */
+
+
+/**
+ *  IS STATE IS ASYCRONOUS ?  
+ * 
+ *  TL;DR: useState is an asynchronous hook and it doesn't change the state immediately, 
+ * it has to wait for the component to re-render. useRef is a synchronous hook that updates
+ *  the state immediately and persists its value through the component's lifecycle, 
+ * but it doesn't trigger a re-render.
+
+ */
+
+
+/**
+ * 
+In React, state updates are inherently asynchronous processes. When you call the setState function, React schedules an update rather than immediately applying the changes. This allows React to batch multiple state updates together, 
+minimizing unnecessary re-renders and improving overall efficiency.12 Dec 2023
+ */
+
+/**
+ *  Dimention
+ *  Platform
+ *  Aspect Ratio
+ *  Percantage
+ *  Flexbox
+ */
+
+
+/**
+ *  Generator Functions :  https://www.youtube.com/watch?v=IJ6EgdiI_wU (VVVVMI INCREDIBLE EXPLAIN)
+ *  
+ *  First generator functions are special type of functions in javascript and you can create 
+ *  generator functions  by giving * to them
+ *  
+ *  Now once you create generator functions means once you have given * to any function then 
+ *  you can use special type of return which is yeid inside generator function
+ * 
+ *  Simple purpose of generator function is to run some code and return value then again run
+ *  some code and return value and again do the same thing
+ * 
+ *  Mostly we return things once in normal function
+ * 
+ *  WHAT GENERATOR FUNCTION RETURN ?
+ * 
+ *  IT RETURN JAVASCRIPT OBJECT (GeneratorObject);
+ * 
+ *  SEE IN GENERATOR OBJECT THAT IS BEING RETURN THERE HAVE METHODS
+ * 
+ *    next();  // THIS IS THE ONLY METHOD WE CARE ABOUT
+ *    return();
+ *    throw();
+ * 
+ *  NOW SEE FIRST GENERATOR FUNCTIONS RETURNS THE OBJECT AND AFTER THAT 
+ * 
+ *  FROM THAT OBJECT IF YOU ACCESS next() METHOD THEN IT ALSO RETURN OBJECT
+ * 
+ *  SO FIRST GENERATOR FUNCTION RETRUN OBJECT WHERE YOU HAVE NEXT() , THROW() AND
+ *  RETURN()
+ * 
+ *  NEXT() , THROW() AND RETURN 
+ * 
+ *  NEXT() , THROUW AND RETURN 
+ * 
+ *  NOW FROM ABOVE WE ONLY CARE ABOUT NEXT() METHOD TO ACCESS THEN NEXT ELEMENTS AND IT GIVES
+ *  YOU OBECT AGAIN WHICH WILL HAVE VALUE AND DONE PROPERTY DONE WILL GIVE YOU IDEA WHETHER 
+ *  YOU HAVE SOMETHING MORE TO ACCESS OR NOT 
+ *  
+ *  function * meraGenerator() {
+ *    yield 1  // yield is special kind of keyword inside generator function 
+ *    yield 2
+ *    yield 3
+ *  }
+ * 
+ *  const result = meraGenerator() ; // MAKE SURE ITS SYCROZOINED
+ * 
+ *  const val = result.next(); // {value : "whatever value you have returned from yield" ,
+ *   done : true/false // thats lets you know that you have any other value to be get}
+ * 
+ * 
+ *  ALSO WHEN YOU CALL GENERATOR SECOND TIME THAT IT BASICALLY CREATE INSTANCE OF TOTALLY NEW INSTANCE
+ *  OF THAT OBJECT AGAIN
+ * 
+ * 
+ *  const firstGenrator = meraGenerator();
+ *  const secondGenerator = meraGenerator(); // this is totally new instance
+ */
+
+function * simpleGenerator(){
+ yield 1
+ yield 2
+ yield 4
+}
+
+/**
+ * THING ABOUT SECNARIO WHEN YOU WANTED TO HAVE INFINITY LOOP IN THAT CASE GENERATOR IS USEFULL
+ *  BECAUSE YOU ARE ACCESSING ONE ELEMENT AT TIME 
+ * 
+ *  ITERATOR SIMPLE ITORATE GENERATOR 
+ */
+
+// ITERATOR VALUE FROM GENERATOR
+while(object.next().done !== false){
+  console.log()
+}
+
+/**
+ *  WHAT EVER YOU PASS IN next() THAT IS GOING TO BE RETURN FROM YEILD
+ * 
+ *  ALSO WE TALKED ABOUT THREE FUNCTIONS LIKE return() next() and throw();
+ * 
+ *  AND RETURN IS INCREDIBLE METHOD WHICH IS USED TO STOP THE GENERATOR FUNCTION
+ * 
+ *  YOU CAN USE RETURN TO STOP THE GENERATOR FUNCTION
+ */
