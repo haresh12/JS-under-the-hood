@@ -442,3 +442,13 @@ if(typeof x ===  'string'){
 // Discrimant UNION is just one field in each interface will have
 // different value we can check according to that function what
 // type is basically returned
+
+
+
+/**
+ *  partial
+ *  required
+ *  readonly
+ *  omit 
+ *  pick
+ */
