@@ -779,3 +779,35 @@ Promise.all([firstPromise, secondPromise, thirdPromise])
  *   DEFALUT PARAM VALUE
  *
  */
+
+/**
+ *  PROTOTYPE : MUST NEED TO KNOW THIS IS CORE
+ *
+ *  BEFORE UNDERSTING PROTOTYPE INHERITAL UNDERSTAND THIS
+ *  INHERITANCE IS SIMPLE WORD MEANS THAT OBJECT SHARING
+ *  OR ACCESSING PROPERTIES OF ANOTHER OBJECT
+ *
+ *  IN OTHER LANGUAGES WE HAVE CLASSIS INHERITANCE HERE WE ONLY HAVE PROTOTYPE INHERITANCE
+ */
+
+/**
+ * What are the parts of a JWT token?
+In its compact form, JSON Web Tokens consist of three parts separated by dots ( . ), which are:
+Header.
+Payload.
+Signature.
+ */
+
+/**
+ *  Dimantion
+ *  Aspect Ratio
+ *  Platform Api
+ */
+
+/**
+ *  Partial
+ *  ReadOnly
+ *  Required
+ *  Omit
+ *  Pick
+ */
